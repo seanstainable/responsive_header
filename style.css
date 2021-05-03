@@ -1,0 +1,101 @@
+:root {
+  --text-color: #f0f4f5;
+  --background-color: #004883;
+  --accent-color: #e32934;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif KR", serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar__title {
+  padding: 10px 20px;
+}
+
+.navbar__toggle {
+  position: absolute;
+  right: 24px;
+  font-size: 24px;
+  display: none;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  padding: 10px 20px;
+}
+
+.navbar__menu li:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.navbar__icons {
+  list-style: none;
+}
+
+.navbar__icons li {
+  padding: 10px 20px;
+  font-size: 24px;
+}
+
+.fa-github:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.navbar__toggle:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .navbar__icons {
+    display: none;
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .navbar__toggle {
+    position: absolute;
+    right: 24px;
+    font-size: 24px;
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
